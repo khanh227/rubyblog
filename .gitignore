@@ -13,8 +13,12 @@
 
 # Ignore all logfiles and tempfiles.
 /log/*
+log/*
 !/log/.keep
 /tmp
+tmp/*
+log/development.log
+tmp/pids/server.pid
 .env
 public/assets/*
 Procfile.dev
