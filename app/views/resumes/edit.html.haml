@@ -1,0 +1,16 @@
+.container-fluid
+  .panel.panel-default
+    .panel-heading
+      %h6.panel-title.text-small
+        Basic Info
+        %span.label.label-danger
+    .panel-body
+      - if !@resume.errors.empty?
+        .alert.alert-error
+          %ul
+            - @resume.errors.full_messages.each do |msg|
+              %li= msg
+      .well
+        .row
+          .col-md-6.col-sm-12
+            = render 'form'

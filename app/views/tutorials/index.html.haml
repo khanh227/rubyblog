@@ -1,0 +1,26 @@
+.container-fluid
+  = @a
+  %hr/
+  = @b
+  %hr/
+  = @c
+  %hr/
+  %ol
+    - i=0
+    - @tutorials.each do |tutorial|
+      %li
+        = i
+        \.#{tutorial.title}
+      - i +=1
+  %hr/
+  %ol
+    - i = 0
+    - num = @tutorials.length
+    - while i < num  do
+      %li= @tutorials[i].title
+    - i += 1
+    - end
+  %hr/
+  %hr/
+  %hr/
+  / <p><haml_loud> @range2 </haml_loud></p>

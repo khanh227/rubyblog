@@ -1,0 +1,39 @@
+.container-fluid
+  .panel.panel-default
+    .panel-heading
+      %h4.panel-title.text-small.pull-left Listing articles
+      = link_to 'New article', new_article_path, class: "btn btn-primary pull-right"
+      .clearfix
+    .panel-body
+      %table#dataTable.table{:cellspacing => "0", :width => "100%"}
+        %thead
+          %tr
+            %th{:align => "left", :width => "2%"}
+              %input{:name => "article-all", :type => "checkbox", :value => ""}/
+            %th{:align => "left", :width => "5%"} #
+            %th{:width => "45%"} Title
+            %th Image
+            %th{:align => "left", :width => "8%"} Comments
+            %th{:width => "100"} Action
+        %tbody
+          - @articles.each do |article|
+            %tr
+              %td{:align => "left"}
+                %input{:name => "article-#{article.id}", :type => "checkbox", :value => "#{article.id}"}/
+              %td{:align => "left"}
+                = link_to(article_path(article)) do
+                  = article.id
+              %td
+                = link_to(article_path(article)) do
+                  = article.title
+              %td
+                %img{:alt => "", :src => "#{article.attachment_url}", :width => "250"}/
+              %td{:align => "left"}
+                = article.comments.count
+              %td
+                = link_to(edit_article_path(article)) do
+                  %i.fa.fa-pencil{"aria-hidden" => "true"}
+                 
+                \#{link_to(article_path(article), method: :delete, data: { confirm: 'Are you sure?' }) do}
+                  %i.fa.fa-trash{"aria-hidden" => "true"}
+      = will_paginate @article

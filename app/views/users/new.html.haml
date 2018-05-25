@@ -1,0 +1,24 @@
+- provide(:title, "Signup")
+#signup
+  .panel.panel-default
+    .panel-heading
+      %h1.panel-title Sign Up
+    .panel-body
+      = form_for(@user) do |f|
+        = render 'shared/error_messages'
+        .form-group
+          = f.label :name
+          = f.text_field :name, class: 'form-control'
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        .form-group
+          = f.label :password_confirmation, "Password Confirmation"
+          = f.password_field :password_confirmation, class: 'form-control'
+        = f.submit "Create my account", class: "btn btn-primary"
+        = link_to 'Back', users_path, class: "btn btn-default"
+      %hr/
+      %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. mollit anim id est laborum.

@@ -1,0 +1,25 @@
+%ul#nav-right.nav.navbar-nav.navbar-right
+  %li
+    %a{:href => "#"}
+      %i.fa.fa-th{"aria-hidden" => "true"}
+  %li
+    %a{:href => "#"}
+      %i.fa.fa-bell{"aria-hidden" => "true"}
+  %li.dropdown
+    %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+      %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+      Tibeo
+      %span.caret
+    %ul.dropdown-menu
+      %li= link_to 'Profile', user_path(2)
+      %li
+        %a{:href => "#"} Action
+      %li
+        %a{:href => "#"} Another action
+      %li
+        %a{:href => "#"} Something else here
+      %li.divider{:role => "separator"}
+      %li
+        %a{:href => "/logout"}
+          %i.fa.fa-sign-out{"aria-hidden" => "true"}
+          Logout

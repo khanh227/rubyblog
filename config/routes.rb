@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  namespace :admin do
+    root to: 'dashboard#index'
+    resources :articles
+  end
+
   resources :resumes
   resources :tutorials
   resources :products
@@ -29,7 +34,4 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :resumes, only: [:index, :new, :create, :destroy]
-  root "resumes#index"
-
-
 end

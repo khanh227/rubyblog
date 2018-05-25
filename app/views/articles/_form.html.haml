@@ -1,0 +1,21 @@
+= form_with model: @article, local: true do |form|
+  - if @article.errors.any?
+    .alert.alert-warning{:role => "alert"}
+      %h4
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li
+            = msg
+  .form-group
+    = form.label :title, for:'inputTitle'
+    = form.text_field :title, id:'inputTitle', class:'form-control'
+  .form-group
+    = form.label :text, for:'inputText'
+    = form.text_area :text, id:'inputText', class:'form-control', rows: '20'
+  .form-group
+    = form.label :attachment, for:'inputAttachment'
+    = form.file_field :attachment, id:'inputAttachment', class:'form-control'
+  = form.submit 'Save', class: 'btn btn-primary'
+  = link_to 'Back', articles_path, class:'btn btn-default'
