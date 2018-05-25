@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title(yield(:title)) %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body class="canadian-palette" id="page-top">
+    <%= render 'partials/menu' %>
+    <div class="content-wrapper">
+      <div class="col col-left"><%= yield(:leftnavs) || render(:partial => 'partials/left-nav') %></div>
+      <div class="col col-right">
+        <div class="col col-content">
+          <br>
+          <!-- Breadcrumbs -->
+          <div class="container-fluid">
+            <ol class="breadcrumb">
+              <%= render_breadcrumbs  :tag => :li, :separator => "" %>
+            </ol>
+          </div>
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+    <%= render 'partials/footer'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

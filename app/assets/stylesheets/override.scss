@@ -1,0 +1,35 @@
+body {
+  overflow: hidden;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar {
+  margin: 0;
+  border: 0;
+  .navbar-nav li>a:focus,
+  .navbar-nav li>a:hover{
+    background-color: #f1f1f1;
+    color: #777
+  }
+  a.navbar-brand {
+    width: 220px;
+    background-color: #000;
+    color: #fff;
+  }
+
+  a.navbar-brand:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+.navbar.navbar-default {
+  background-color: #4e4e4e;
+}
+.panel-default>.panel-heading{
+  background-color: #000;
+  color: #fff
+}
