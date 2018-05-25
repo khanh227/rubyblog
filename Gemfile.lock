@@ -48,6 +48,10 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt4 (4.1.0)
+    better_errors (2.4.0)
+      coderay (>= 1.0.0)
+      erubi (>= 1.0.0)
+      rack (>= 0.9.0)
     bindex (0.5.0)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
@@ -74,6 +78,7 @@ GEM
     climate_control (0.2.0)
     cocaine (0.6.0)
       terrapin (= 0.6.0)
+    coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0)
@@ -83,16 +88,34 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
+    crack (0.4.3)
+      safe_yaml (~> 1.0.0)
     crass (1.0.4)
+    diff-lcs (1.3)
+    docile (1.3.1)
     erubi (1.7.1)
     execjs (2.7.0)
+    factory_girl (4.9.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.9.0)
+      factory_girl (~> 4.9.0)
+      railties (>= 3.0.0)
+    faker (1.8.7)
+      i18n (>= 0.7)
     ffi (1.9.23)
     ffi (1.9.23-x64-mingw32)
     ffi (1.9.23-x86-mingw32)
     font-awesome-rails (4.7.0.4)
       railties (>= 3.2, < 6.0)
+    gems (0.8.3)
+    gemsurance (0.9.0)
+      bundler (~> 1.2)
+      gems (~> 0.8)
+      git (~> 1.2)
+    git (1.4.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashdiff (0.3.7)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     jbuilder (2.7.0)
@@ -104,6 +127,7 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-slick-rails (1.9.0)
       railties (>= 3.1)
+    json (2.1.0)
     loofah (2.2.2)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -142,6 +166,10 @@ GEM
       bundler (>= 1.3.0)
       railties (= 5.1.6)
       sprockets-rails (>= 2.0.0)
+    rails-controller-testing (1.0.2)
+      actionpack (~> 5.x, >= 5.0.1)
+      actionview (~> 5.x, >= 5.0.1)
+      activesupport (~> 5.x)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -166,7 +194,30 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec-activemodel-mocks (1.0.3)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      rspec-mocks (>= 2.99, < 4.0)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
     rubyzip (1.2.1)
+    safe_yaml (1.0.4)
+    safety_mailer (0.0.10)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -181,6 +232,19 @@ GEM
     selenium-webdriver (3.11.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2)
+    shoulda (3.5.0)
+      shoulda-context (~> 1.0, >= 1.0.1)
+      shoulda-matchers (>= 1.4.1, < 3.0)
+    shoulda-context (1.2.2)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
+    simplecov (0.16.1)
+      docile (~> 1.1)
+      json (>= 1.8, < 3)
+      simplecov-html (~> 0.10.0)
+    simplecov-html (0.10.2)
+    spring (2.0.2)
+      activesupport (>= 4.2)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -196,6 +260,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timecop (0.9.1)
     turbolinks (5.1.1)
       turbolinks-source (~> 5.1)
     turbolinks-source (5.1.0)
@@ -210,6 +275,10 @@ GEM
       activemodel (>= 5.0)
       bindex (>= 0.4.0)
       railties (>= 5.0)
+    webmock (3.4.1)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -225,6 +294,7 @@ PLATFORMS
 DEPENDENCIES
   autoprefixer-rails
   bcrypt4 (~> 4.1.0)
+  better_errors
   bootstrap-sass (~> 3.2.0)
   bower-rails
   breadcrumbs_on_rails
@@ -232,22 +302,35 @@ DEPENDENCIES
   capybara (~> 2.13)
   carrierwave
   ckeditor
+  climate_control
   coffee-rails (~> 4.2)
+  factory_girl_rails
+  faker
   font-awesome-rails
+  gemsurance
   jbuilder (~> 2.5)
   jquery-rails
   jquery-slick-rails
   puma (~> 3.7)
   rails (~> 5.1.4)
+  rails-controller-testing
   react-rails
   responders
+  rspec-activemodel-mocks
+  rspec-rails (~> 3.0)
+  safety_mailer
   sass-rails (~> 5.0)
   selenium-webdriver
+  shoulda
+  simplecov
+  spring
   sqlite3
+  timecop
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  webmock
   will_paginate (~> 3.1.0)
 
 BUNDLED WITH

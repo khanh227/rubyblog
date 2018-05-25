@@ -20,6 +20,11 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  namespace :admin do
+    root to: 'dashboard#index'
+    resources :articles
+  end
+
   resources :resumes
   resources :tutorials
   resources :products

@@ -33,9 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 
-
-# gem 'haml'
-# gem "haml-rails", "~> 1.0"
+gem 'haml-rails', '~> 1.0.0'
 
 gem 'will_paginate', '~> 3.1.0'
 
@@ -53,12 +51,29 @@ gem 'responders'
 gem "jquery-slick-rails"
 gem "breadcrumbs_on_rails"
 
+group :development, :test, :staging do
+  gem 'safety_mailer'
+  gem 'simplecov'
+  gem 'rspec-activemodel-mocks'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'rails-controller-testing'
+  gem 'shoulda'
+  gem 'better_errors'
+  gem 'spring'
+  gem 'timecop'
+  gem 'webmock'
+  gem 'gemsurance'
+  gem 'climate_control'
 end
 
 group :development do
