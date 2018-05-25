@@ -34,7 +34,4 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :resumes, only: [:index, :new, :create, :destroy]
-  root "resumes#index"
-
-
 end

@@ -1,0 +1,16 @@
+.container-fluid
+  %p#notice= notice
+  %h4 Users
+  = link_to 'Back', users_path
+  .panel.panel-default
+    .panel-heading
+      %h6.panel-title.text-small
+        Basic Info
+        %span.label.label-danger= link_to 'Edit', edit_user_path(@user)
+    .panel-body
+      %p
+        %strong Name:
+        = @user.name
+      %p
+        %strong Email:
+        = @user.email

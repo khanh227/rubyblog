@@ -1,0 +1,10 @@
+= form_with(model: [ @article, @article.comments.build ]) do |form|
+  .form-group
+    = form.label :commenter, for:'inputCommenter'
+    %br/
+    = form.text_field :commenter, id:'inputCommenter', class:'form-control'
+  .form-group
+    = form.label :body, for:'inputBody'
+    %br/
+    = form.text_area :body, id:'inputBody', class:'form-control'
+  = form.submit 'Post a comment', class: 'btn btn-primary'

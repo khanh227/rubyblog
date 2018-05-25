@@ -1,0 +1,9 @@
+.jumbotron
+  %h4.display-6
+    %i.fa.fa-user-circle-o{"aria-hidden" => "true"}
+    %b= comment.commenter
+    %br/
+  %p.lead
+    = comment.body
+  %hr.my-4/
+  = link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' }

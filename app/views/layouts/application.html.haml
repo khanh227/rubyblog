@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title= full_title(yield(:title))
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+  %body#page-top.canadian-palette
+    = render 'partials/menu'
+    .content-wrapper
+      .col.col-left= yield(:leftnavs) || render(:partial => 'partials/left-nav')
+      .col.col-right
+        .col.col-content
+          %br/
+          / Breadcrumbs
+          .container-fluid
+            %ol.breadcrumb
+              = render_breadcrumbs  :tag => :li, :separator => ""
+          = yield
+    = render 'partials/footer'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

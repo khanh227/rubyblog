@@ -1,0 +1,18 @@
+- provide(:title, "Log in")
+#login
+  .panel.panel-default
+    .panel-heading
+      %h3.panel-title Log In
+    .panel-body
+      = form_for(:session, url: login_path) do |f|
+        .form-group
+          = f.label :email
+          = f.email_field :email, class: 'form-control'
+        .form-group
+          = f.label :password
+          = f.password_field :password, class: 'form-control'
+        = f.submit "Log in", class: "btn btn-primary"
+      %hr/
+      %p
+        New user?
+        \#{link_to "Sign up now!", signup_path}
