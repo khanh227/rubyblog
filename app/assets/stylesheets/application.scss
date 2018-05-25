@@ -1,0 +1,106 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.min
+ *= require font-awesome/css/font-awesome.min
+ *= require slick-carousel/slick/slick
+ *= require slick-carousel/slick/slick-theme
+ *= require override
+ *= require_tree .
+ *= require_self
+ */
+
+.col {
+  flex-direction: column;
+}
+
+.col-left {
+  width: 220px;
+  float: left;
+  padding: 10px 15px;
+  color: #fff;
+}
+
+@media (max-width:768px){
+  .col-left {
+    width: 0;display: none;
+  }
+}
+
+.col-left,
+.col-right {
+  height: calc(100vh - 90px);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.col-content {
+  width: calc(100vw - 220px);
+  float: left;
+  padding-bottom: 50px;
+}
+
+.bg-dark {
+  background-color: #4e4e4e;
+}
+
+.pagination {
+  margin: 9px 0;
+
+  a,
+  em.current,
+  span {
+    background-color: #f1f1f1;
+    border: 1px solid #e4e1e1;
+    padding: 5px 10px;
+  }
+
+  em.current {
+    color: #fff;
+    background-color: #337ab7;
+  }
+}
+
+.new-members {
+  margin-bottom: 15px;
+}
+
+#slick-slider {
+  img {}
+
+  .member {
+    max-width: 120px;
+    margin-left: 5px;
+    margin-right: 5px;
+    position: relative;
+
+    .mem-info {
+      position: absolute;
+      top: auto;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      padding: 0 5px 5px;
+      text-align: right;
+      color: #fff;
+
+      i.fa {
+        color: #inherit;
+      }
+    }
+  }
+}
+
+footer.footer {
+  background-color: #e7e7e7;
+  padding-top: 10px;
+}

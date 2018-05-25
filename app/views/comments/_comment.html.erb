@@ -1,0 +1,13 @@
+<div class="jumbotron">
+
+  <h4 class="display-6">
+    <i aria-hidden="true" class="fa fa-user-circle-o"></i>
+   <b><%= comment.commenter %></b><br>
+  </h4>
+  <p class="lead">
+
+    <%= comment.body %>
+  </p>
+  <hr class="my-4"/>
+  <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
